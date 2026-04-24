@@ -1098,4 +1098,5 @@ NSBundle *YouModBundle() {
         AllowsBackgroundPlayback: @YES,
         HideCreateButton: @YES,
     }];
+    %init;
 }
