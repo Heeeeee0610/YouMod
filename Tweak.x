@@ -238,6 +238,10 @@ static BOOL isDarkMode(UIView *view) {
     %orig;
     if (IS_ENABLED(HideNoti)) self.notificationButton.hidden = YES;
     if (IS_ENABLED(HideSearch)) self.searchButton.hidden = YES;
+    if (IS_ENABLED(HideiSponsorBlock)) {
+        self.sponsorBlockButton.hidden = YES;
+        self.sponsorBlockButton.frame = CGRectZero;
+    }
     for (UIView *subview in self.subviews) {
         if (IS_ENABLED(HideVoiceSearch) && [subview.accessibilityLabel isEqualToString:NSLocalizedString(@"search.voice.access", nil)]) subview.hidden = YES;
         if (IS_ENABLED(HideCastButtonNav) && [subview.accessibilityIdentifier isEqualToString:@"id.mdx.playbackroute.button"]) subview.hidden = YES;

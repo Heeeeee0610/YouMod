@@ -268,6 +268,18 @@ NSBundle *YouModBundle() {
         settingItemId:0];
     [sectionItems addObject:hidecastbuttonnav];
 
+    // Hide iSponsorBlock button
+    YTSettingsSectionItem *hideisponsorblock = [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_ISPONSORBLOCK")
+        titleDescription:LOC(@"HIDE_ISPONSORBLOCK_DESC")
+        accessibilityIdentifier:nil
+        switchOn:IS_ENABLED(HideiSponsorBlock)
+        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:HideiSponsorBlock];
+            return YES;
+        }
+        settingItemId:0];
+    [sectionItems addObject:hideisponsorblock];
+
     // Section 3
     // Feed
     YTSettingsSectionItem *feed = [YTSettingsSectionItemClass itemWithTitle:nil

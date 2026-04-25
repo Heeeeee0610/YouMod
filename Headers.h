@@ -46,6 +46,7 @@
 #define HideSearch @"YouModHideSearchButton"
 #define HideVoiceSearch @"YouModHideVoiceSearchButton"
 #define HideCastButtonNav @"YouModHideCastButtonNavigationBar"
+#define HideiSponsorBlock @"YouModHideiSponsorBlockButton"
 // Feed
 #define RemoveAds @"YouModRemoveAdsAndPromotions"
 #define HideSubbar @"YouModHideSubbar"
@@ -124,6 +125,7 @@
 @interface YTRightNavigationButtons (YouMod)
 @property (nonatomic, strong) YTQTMButton *notificationButton;
 @property (nonatomic, strong) YTQTMButton *searchButton;
+@property (nonatomic, strong) YTQTMButton *sponsorBlockButton;
 @end
 
 @interface YTNavigationBarTitleView : UIView

@@ -22,6 +22,8 @@
 "HIDE_VOICE_SEARCH_BUTTON_DESC" = "Hide voice search button from the navigation bar.";
 "HIDE_CAST_BUTTON_NAVBAR" = "Hide cast button";
 "HIDE_CAST_BUTTON_NAVBAR_DESC" = "Hide cast button from the navigation bar.";
+"HIDE_ISPONSORBLOCK" = "Hide iSponsorBlock button";
+"HIDE_ISPONSORBLOCK_DESC" = "Hide iSponsorBlock button from the navigation bar.";
 
 "FEED" = "Feed";
 "REMOVE_ADS" = "Remove ads";
