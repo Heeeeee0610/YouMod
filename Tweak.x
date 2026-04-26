@@ -234,12 +234,10 @@ static BOOL isDarkMode(UIView *view) {
 %end
 
 // NEW: Hide iSponsorBlock button
-%hook YTQTMButton
-- (id)barButtonWithImage:(UIImage *)image accessibilityLabel:(NSString *)label accessibilityIdentifier:(NSString *)id {
-    if (id && [id isEqualToString:@"sponsorBlockButton"] && IS_ENABLED(HideiSponsorBlock)) {
-        return nil;
-    }
-    return %orig;
+%hook YTRightNavigationButtons
+- (void)setButton:(id)arg1 forType:(unsigned long long)arg2 {
+    if (arg2 && arg2 == 'ispb' && IS_ENABLED(HideiSponsorBlock)) return;
+    %orig;
 }
 %end
 
