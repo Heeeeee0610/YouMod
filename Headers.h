@@ -23,7 +23,7 @@
 #import <YouTubeHeader/YTPlayerOverlay.h>
 #import <YouTubeHeader/YTPlayerOverlayProvider.h>
 #import <YouTubeHeader/YTReelModel.h>
-// #import <YouTubeHeader/YTAlertView.h>
+#import <YouTubeHeader/YTAlertView.h>
 #import <dlfcn.h>
 
 // For Settings.x

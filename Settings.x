@@ -167,7 +167,12 @@ static NSString *GetCacheSize() { // YTLite - @dayanch96
         accessibilityIdentifier:nil
         detailTextBlock:nil
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-            [[YouModPrefsManager sharedManager] importYouModSettingsFromVC:settingsViewController];
+            YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
+                [[YouModPrefsManager sharedManager] importYouModSettingsFromVC:settingsViewController];
+            } actionTitle:LOC(@"YES")];
+            alertView.title = LOC(@"WARNING");
+            alertView.subtitle = LOC(@"OVERRIDE");
+            [alertView show];
             return YES;
         }
     ];

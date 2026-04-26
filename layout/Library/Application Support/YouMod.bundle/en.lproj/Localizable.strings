@@ -8,12 +8,20 @@
 "PERFER" = "Perferences";
 "IMPORT" = "Import settings";
 "IMPORT_DESC" = "Load your preferences from a .plist file.";
+"IMPORT_DONE" = "Successful";
+"YES" = "Yes";
+"APPLY_DESC" = "App restart is requried. Do you want to restart the app now?";
 "EXPORT" = "Export settings";
 "EXPORT_DESC" = "Send out your preferences to a .plist file.";
 "RESTORE" = "Restore settings";
 "RESTORE_DESC" = "Load default settings like in fresh install.";
+"WARNING" = "Warning";
+"RESETDEFAULT" = "This will reset all settings to default. Do you want to continue?";
+"ERROR" = "Error";
 "ERROR_INVALID_FILE" = "Invaild file";
-"ERROR_NO_KEYS" = "No available keys to import/export";
+"ERROR_NO_KEYS_IMPORT" = "No available keys to import";
+"ERROR_NO_KEYS_EXPORT" = "No available keys to export";
+"OVERRIDE" = "This will override the current settings. Do you want to continue?";
 
 "CACHE" = "Cache";
 "CLEARCACHE" = "Clear cache";

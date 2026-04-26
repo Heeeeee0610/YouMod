@@ -14,13 +14,6 @@
     return shared;
 }
 
-// Global toast helper
-- (void)showToast:(NSString *)message {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[%c(YTToastResponderEvent) eventWithMessage:message firstResponder:[self parentResponder]] send];
-    });
-}
-
 // Import
 - (void)importYouModSettingsFromVC:(UIViewController *)vc {
     UIDocumentPickerViewController *picker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"com.apple.property-list", @"public.item"] inMode:UIDocumentPickerModeImport];
@@ -35,7 +28,10 @@
     NSDictionary *importedData = [NSDictionary dictionaryWithContentsOfURL:selectedFileURL];
     // Vaild plist check
     if (!importedData || ![importedData isKindOfClass:[NSDictionary class]]) {
-        [self showToast:LOC(@"ERROR_INVALID_FILE")];
+        YTAlertView *alertView = [%c(YTAlertView) infoDialog];
+        alertView.title = LOC(@"ERROR");
+        alertView.subtitle = LOC(@"ERROR_INVALID_FILE");
+        [alertView show];
         return;
     }
     BOOL foundKeys = NO;
@@ -48,20 +44,20 @@
     }
     // Check if there's any YouMod key
     if (!foundKeys) {
-        [self showToast:LOC(@"ERROR_NO_KEYS")];
+        YTAlertView *alertView = [%c(YTAlertView) infoDialog];
+        alertView.title = LOC(@"ERROR");
+        alertView.subtitle = LOC(@"ERROR_NO_KEYS_IMPORT");
+        [alertView show];
         return;
     }
     [defaults synchronize];
-    [self showToast:LOC(@"DONE")];
-    /*
     // Success Alert with Restart
     YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
         exit(0);
     } actionTitle:LOC(@"YES")];
-    alertView.title = LOC(@"DONE");
+    alertView.title = LOC(@"IMPORT_DONE");
     alertView.subtitle = LOC(@"APPLY_DESC"); // "Restart required"
     [alertView show];
-    */
 }
 
 // Export
@@ -74,7 +70,10 @@
         }
     }
     if (youModOnly.count == 0) {
-        [self showToast:LOC(@"ERROR_NO_KEYS")];
+        YTAlertView *alertView = [%c(YTAlertView) infoDialog];
+        alertView.title = LOC(@"ERROR");
+        alertView.subtitle = LOC(@"ERROR_NO_KEYS_EXPORT");
+        [alertView show];
         return;
     }
     NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"YouMod_Preferences.plist"];
@@ -92,7 +91,6 @@
 
 // Reset
 - (void)restoreYouModDefaults {
-    /*
     YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         for (NSString *key in [defaults dictionaryRepresentation]) {
@@ -106,20 +104,6 @@
     alertView.title = LOC(@"WARNING");
     alertView.subtitle = LOC(@"RESETDEFAULT");
     [alertView show];
-    */
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    for (NSString *key in [defaults dictionaryRepresentation]) {
-        if ([key hasPrefix:Prefix]) {
-            [defaults removeObjectForKey:key];
-        }
-    }
-    [defaults setBool:YES forKey:AutoClearCache];
-    [defaults setBool:YES forKey:YTPremiumLogo];
-    [defaults setBool:YES forKey:HideCreateButton];
-    [defaults setBool:YES forKey:HideCastButtonNav];
-    [defaults setBool:YES forKey:HideCastButtonPlayer];
-    [defaults synchronize];
-    [self showToast:LOC(@"DONE")];
 }
 
 @end
