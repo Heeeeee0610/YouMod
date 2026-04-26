@@ -1,20 +1,7 @@
 #import "Headers.h"
 
-#define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
+#define LOC(x) [([NSBundle bundleWithPath:PS_ROOT_PATH_NS(@"/Library/Application Support/YouMod.bundle")] ?: [NSBundle mainBundle]) localizedStringForKey:x value:nil table:nil]
 #define Prefix @"YouMod"
-
-NSBundle *YouModBundle() {
-    static NSBundle *bundle = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"YouMod" ofType:@"bundle"];
-        if (tweakBundlePath)
-            bundle = [NSBundle bundleWithPath:tweakBundlePath];
-        else
-            bundle = [NSBundle bundleWithPath:[NSString stringWithFormat:PS_ROOT_PATH_NS(@"/Library/Application Support/YouMod.bundle")]];
-    });
-    return bundle;
-}
 
 @implementation YouModPrefsManager
 
