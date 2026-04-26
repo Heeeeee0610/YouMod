@@ -957,10 +957,6 @@ static BOOL isDarkMode(UIView *view) {
 - (BOOL)enableIosFloatingMiniplayer { return IS_ENABLED(DisablesNewMiniPlayer) ? NO : %orig; }
 %end
 
-%hook YTColdConfigWatchPlayerClientGlobalConfigImpl
-- (BOOL)enableIosFloatingMiniplayer { return IS_ENABLED(DisablesNewMiniPlayer) ? NO : %orig; }
-%end
-
 // Disables Snackbar
 %hook GOOHUDManagerInternal
 - (id)sharedInstance { return IS_ENABLED(DisablesSnackBar) ? nil : %orig; }
