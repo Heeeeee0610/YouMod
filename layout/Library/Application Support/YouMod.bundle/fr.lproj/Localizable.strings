@@ -150,7 +150,7 @@
 "TABBAR" = "Barre d’onglets";
 "DEFAULT_TAB" = "Onglet par défaut";
 "DEFAULT_TAB_DESC" = "Vous pouvez sélectionner l’onglet à ouvrir au démarrage de l’application.";
-"HOME" = "Accueil";
+"HOME_NAME" = "Accueil";
 "SUBSCRIPT_NAME" = "Abonnements";
 "LIB_NAME" = "Bibliothèque (Vous)";
 "HIDE_TAB_INDI" = "Masquer indicateurs";

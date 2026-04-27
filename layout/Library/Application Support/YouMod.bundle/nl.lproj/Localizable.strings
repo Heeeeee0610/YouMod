@@ -150,7 +150,7 @@
 "TABBAR" = "Tabbalk";
 "DEFAULT_TAB" = "Standaard tab";
 "DEFAULT_TAB_DESC" = "Je kunt kiezen welk tabblad wordt geopend bij het starten van de app.";
-"HOME" = "Home";
+"HOME_NAME" = "Home";
 "SUBSCRIPT_NAME" = "Abonnementen";
 "LIB_NAME" = "Bibliotheek (Jij)";
 "HIDE_TAB_INDI" = "Indicatoren verbergen";

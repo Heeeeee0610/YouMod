@@ -150,7 +150,7 @@
 "TABBAR" = "Barra de pestañas";
 "DEFAULT_TAB" = "Pestaña predeterminada";
 "DEFAULT_TAB_DESC" = "Puedes seleccionar la pestaña que deseas abrir al iniciar la aplicación.";
-"HOME" = "Inicio";
+"HOME_NAME" = "Inicio";
 "SUBSCRIPT_NAME" = "Suscripciones";
 "LIB_NAME" = "Biblioteca (Tú)";
 "HIDE_TAB_INDI" = "Ocultar indicadores";

@@ -150,7 +150,7 @@
 "TABBAR" = "タブバー";
 "DEFAULT_TAB" = "デフォルトタブ";
 "DEFAULT_TAB_DESC" = "アプリ起動時に開くタブを選択できます。";
-"HOME" = "ホーム";
+"HOME_NAME" = "ホーム";
 "SUBSCRIPT_NAME" = "登録チャンネル";
 "LIB_NAME" = "ライブラリ（あなた）";
 "HIDE_TAB_INDI" = "インジケーター非表示";

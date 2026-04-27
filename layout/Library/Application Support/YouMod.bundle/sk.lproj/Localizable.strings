@@ -150,7 +150,7 @@
 "TABBAR" = "Panel kariet";
 "DEFAULT_TAB" = "Predvolená karta";
 "DEFAULT_TAB_DESC" = "Môžete si vybrať kartu, ktorá sa otvorí pri spustení aplikácie.";
-"HOME" = "Domov";
+"HOME_NAME" = "Domov";
 "SUBSCRIPT_NAME" = "Odbery";
 "LIB_NAME" = "Knižnica (Ty)";
 "HIDE_TAB_INDI" = "Skryť indikátory";

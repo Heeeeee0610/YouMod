@@ -150,7 +150,7 @@
 "TABBAR" = "Barra schede";
 "DEFAULT_TAB" = "Scheda predefinita";
 "DEFAULT_TAB_DESC" = "Puoi selezionare la scheda da aprire all’avvio dell’app.";
-"HOME" = "Home";
+"HOME_NAME" = "Home";
 "SUBSCRIPT_NAME" = "Iscrizioni";
 "LIB_NAME" = "Libreria (Tu)";
 "HIDE_TAB_INDI" = "Nascondi indicatori";
